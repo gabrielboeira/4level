@@ -89,13 +89,13 @@ section {
 
 /* Primeira seção */
 .first-section {
+    min-height: calc(100vh - 60px); /* Subtrai a altura do header para evitar sobreposição */
     display: flex;
     justify-content: space-evenly;
     gap: 2rem;
     flex-wrap: wrap;
     align-items: center;
-    min-height: 650px;
-    margin-top: 60px;
+    margin-top: 60px; /* Ajusta o espaçamento em relação ao topo */
 }
 
 .first-section > div {

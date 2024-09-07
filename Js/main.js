@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   
     // Fechar o menu ao clicar fora do menu
-    document.addEventListener('click', function(event) {
+    /*document.addEventListener('click', function(event) {
         var sidebar = document.getElementById('sidebar');
         var menuToggle = document.getElementById('menu-toggle');
   
@@ -19,7 +19,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   
-  function getProjects() {
+  /*function getProjects() {
+
     const urlGitHub = 'https://api.github.com/users/gabrielboeira/repos'
     var loadingElement = document.getElementById('loading')
   
@@ -36,8 +37,8 @@ document.addEventListener('DOMContentLoaded', function() {
       console.log(e)
     })
   }
-  
-  function showProjects(data) {
+*/
+  /*function showProjects(data) {
     var listElement = document.getElementById('my-projects-list')
   
     for(let i = 0; i < data.length; i++)
@@ -51,12 +52,12 @@ document.addEventListener('DOMContentLoaded', function() {
         listElement.appendChild(a)
       }
   
-  }
+  }/*
   
-  getProjects()
+  /*getProjects()
   
   document.addEventListener("DOMContentLoaded", () => {
-    const themeIcon = document.getElementById("theme-icon");
+    const themeIcon = document.getElementById("theme-icon");*/
 
   });
 

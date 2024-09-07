@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato');
 
+/* Reset de margens e espaçamentos */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Variáveis */
 :root {
     --black: #000000;
     --grey: #717171;
@@ -13,10 +15,11 @@
     --white: #FFFFFF;
     --blue: #89a7b1;
     --cyan1: #0278EF;
-    --dark1: #1a1a1a; /* Cor de fundo ajustada */
-    --dark4: #2c2c2c; /* Cor adicionada para hover */
+    --dark1: #1a1a1a;
+    --dark4: #2c2c2c;
 }
 
+/* Estilos globais */
 body {
     background-color: var(--dark1);
     height: 100vh;
@@ -26,6 +29,7 @@ body {
     background-size: cover;
 }
 
+/* Cabeçalho */
 header {
     display: flex;
     justify-content: space-around;
@@ -36,7 +40,7 @@ header {
     background-color: var(--white);
     width: 100%;
     z-index: 100;
-    background: url(images/1.png)
+    background: url(images/1.png);
 }
 
 .box-img-header {
@@ -48,6 +52,7 @@ header {
     height: 100%;
 }
 
+/* Navegação */
 nav {
     display: flex;
     gap: 2rem;
@@ -67,6 +72,7 @@ nav {
     text-decoration: underline;
 }
 
+/* Estilos gerais */
 main {
     display: flex;
     flex-direction: column;
@@ -77,6 +83,7 @@ section {
     padding: 2rem;
 }
 
+/* Primeira seção */
 .first-section {
     display: flex;
     justify-content: space-evenly;
@@ -95,6 +102,7 @@ section {
     padding: 5px;
 }
 
+/* Textos e botões */
 h1 {
     font-size: 4rem;
     color: var(--white);
@@ -113,17 +121,14 @@ h2 {
     color: var(--cyan1);
 }
 
-h2 .tittle{
+.tittle, .title {
     color: var(--white);
-}
-
-h2 .title {
-    color: white;
 }
 
 h3 {
     color: var(--white);
 }
+
 .btn-action {
     background-color: var(--cyan1);
     border: 5px solid var(--cyan1);
@@ -143,6 +148,7 @@ h3 {
     border: 1px solid var(--cyan1);
 }
 
+/* Imagens */
 .box-img-main {
     max-width: 500px;
     width: 300px;
@@ -154,6 +160,7 @@ h3 {
     max-width: 500px;
 }
 
+/* Segunda e quarta seção */
 :is(.second-section, .fourth-section) {
     background-color: var(--cyan1);
     display: flex;
@@ -184,10 +191,7 @@ h3 {
     cursor: pointer;
 }
 
-.tittle {
-    color: var(--white);
-}
-
+/* Terceira seção */
 .third-section {
     display: flex;
     flex-direction: column;
@@ -212,6 +216,7 @@ h3 {
     text-align: justify;
 }
 
+/* Footer */
 footer {
     padding: 4rem;
     display: flex;
@@ -258,78 +263,11 @@ footer > div {
         width: 80%;
     }
 }
-
-/* Menu lateral */
-.sidebar {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: var(--cyan1);
-    overflow-x: hidden;
-    transition: 0.6s;
-    padding-top: 60px;
-}
-
-.sidebar a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 22px;
-    color: var(--black);
-    display: flex;
-    transition: 0.3s;
-    text-align: center;
-    align-items: center;
-}
-
-.sidebar a:hover {
-    color: #f1f1f1;
-}
-
-.sidebar .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-}
-
-.menu-toggle {
-    font-size: 30px;
-    cursor: pointer;
-    background: none;
-    border: none;
-    color: var(--white);
-}
-
-.menu-toggle:focus {
-    outline: none;
-}
-
-footer {
-    padding: 4rem;
-    display: flex;
-    justify-content: space-between; /* Alinha os elementos no footer */
-    align-items: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-}
-
-footer > div {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-}
-
-.instagram-icon {
-    margin-right: 20px;
-}
-
+/* Formulário */
 #contact-form {
-    max-width: 400px; /* Reduzido de 500px para 400px */
+    max-width: 400px;
     margin: 1px auto;
-    padding: 14px; /* Reduzido de 20px para 15px */
+    padding: 14px;
     background-color: #0278EF;
     border-radius: 10px;
     box-shadow: 0 0 15px #ffffff42;
@@ -352,28 +290,56 @@ footer > div {
 #contact-form input[type="email"], 
 #contact-form textarea {
     width: 100%;
-    padding: 8px; /* Reduzido de 10px para 8px */
-    margin-bottom: 15px; /* Reduzido de 20px para 15px */
+    padding: 8px;
+    margin-bottom: 15px;
     border: 1px solid #ccc;
 }
-
 
 #contact-form input[type="text"]:focus,
 #contact-form input[type="email"]:focus,
 #contact-form textarea:focus {
-    border-color: #27af2e; /* Cor da borda ao focar no campo */
+    border-color: #27af2e;
     outline: none;
 }
 
 #contact-form button[type="submit"] {
     background-color: #4CAF50;
     color: #fff;
-    padding: 8px 15px; /* Reduzido de 10px 20px para 8px 15px */
+    padding: 8px 15px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
+
 #contact-form button[type="submit"]:hover {
-    background-color: #45a049; /* Cor do botão ao passar o mouse */
+    background-color: #45a049;
 }
 
+/* Estilos para a mensagem de feedback */
+.form-message {
+    position: fixed; /* Fixa o elemento na tela */
+    bottom: 20px; /* Distância do fundo da tela */
+    right: 20px; /* Distância da borda direita da tela */
+    padding: 15px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    opacity: 0; /* Começa invisível */
+    transition: opacity 0.5s, transform 0.5s; /* Animação suave */
+    transform: translateY(20px); /* Começa um pouco abaixo da posição final */
+    z-index: 1000; /* Certifique-se de que está acima de outros elementos */
+}
+
+.form-message.success {
+    background-color: #0278EF; /* Verde para sucesso */
+}
+
+.form-message.error {
+    background-color: #f44336; /* Vermelho para erro */
+}
+
+.form-message.show {
+    opacity: 1; /* Torna o elemento visível */
+    transform: translateY(0); /* Move para a posição final */
+}

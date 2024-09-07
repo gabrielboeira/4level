@@ -47,6 +47,17 @@ header {
     box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2); /* Adiciona sombra para destaque */
 }
 
+/* Aplica os ajustes apenas para iOS */
+@supports (-webkit-touch-callout: none) {
+    header {
+        padding-top: env(safe-area-inset-top); /* Ajuste para dispositivos com notch */
+    }
+
+    body {
+        padding-top: 20px; /* Ajuste para compensar a barra de status */
+    }
+}
+
 .box-img-header {
     height: 100%;
 }

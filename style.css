@@ -367,3 +367,57 @@ footer > div {
         padding-top: 60px; /* Ajuste com base na altura do header */
     }
 }
+
+/* Ajuste geral para garantir que o header não sobreponha */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden; /* Evitar rolagem horizontal */
+}
+
+/* Cabeçalho */
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 10px 0;
+    background-color: var(--white);
+    width: 100%;
+    z-index: 1000;
+    background: url(images/1.png);
+    position: fixed; /* Fixa o header no topo */
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px; /* Defina uma altura fixa para o header */
+}
+
+/* Garantindo que o conteúdo não fique abaixo do header */
+body {
+    padding-top: 60px; /* Mesmo valor da altura do header */
+}
+
+/* Ajustes específicos para iOS com safe-area */
+@supports (padding-top: env(safe-area-inset-top)) {
+    body {
+        padding-top: calc(60px + env(safe-area-inset-top));
+    }
+
+    header {
+        padding-top: env(safe-area-inset-top);
+    }
+}
+
+/* Media query para dispositivos iOS com notch (como iPhone X e superiores) */
+@media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
+    header {
+        padding-top: env(safe-area-inset-top);
+    }
+
+    body {
+        padding-top: calc(60px + env(safe-area-inset-top));
+    }
+}

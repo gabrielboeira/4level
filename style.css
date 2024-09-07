@@ -20,33 +20,32 @@
 }
 
 /* Estilos globais */
-body {
+html, body {
     background-color: var(--dark1);
-    height: 100vh;
+    height: 100%;
     font-family: 'Lato', sans-serif;
     background-image: url('images/bg1.png');
     background-attachment: fixed;
     background-size: cover;
+    overflow-x: hidden; /* Para evitar overflow horizontal */
+    position: relative;
+    padding-top: 60px; /* Ajuste baseado na altura do header */
 }
 
 /* Cabeçalho */
-/* Definir o header como sticky */
 header {
-    position: sticky;
-    top: 0; /* Fixar no topo */
     display: flex;
     justify-content: space-around;
     align-items: center;
     gap: 1rem;
     flex-wrap: wrap;
-    padding: env(safe-area-inset-top, 10px) 0; /* Respeitar a área segura no iOS */
+    padding: 10px 0;
     background-color: var(--white);
     width: 100%;
-    z-index: 100;
+    z-index: 1000;
     background: url(images/1.png);
-    box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2); /* Adiciona sombra para destaque */
-    padding-top: constant(safe-area-inset-top); /* para versões antigas do iOS */
-    padding-top: env(safe-area-inset-top); /* para versões mais recentes */ 
+    position: fixed; /* Fixa o header no topo */
+    top: 0;
 }
 
 .box-img-header {
@@ -91,13 +90,13 @@ section {
 
 /* Primeira seção */
 .first-section {
-    min-height: calc(100vh - 60px); /* Subtrai a altura do header para evitar sobreposição */
     display: flex;
     justify-content: space-evenly;
     gap: 2rem;
     flex-wrap: wrap;
     align-items: center;
-    margin-top: 60px; /* Ajusta o espaçamento em relação ao topo */
+    min-height: 650px;
+    margin-top: 60px; /* Compensação do header */
 }
 
 .first-section > div {
@@ -258,11 +257,6 @@ footer > div {
     transition: 0.4s;
     cursor: pointer;
 }
-@media screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-device-pixel-ratio: 3) {
-    header {
-        padding-top: 20px; /* Ajuste específico para iPhones com notch */
-    }
-}
 
 /* Responsividade */
 @media (max-width: 768px) {
@@ -274,6 +268,7 @@ footer > div {
         width: 80%;
     }
 }
+
 /* Formulário */
 #contact-form {
     max-width: 400px;
@@ -353,4 +348,22 @@ footer > div {
 .form-message.show {
     opacity: 1; /* Torna o elemento visível */
     transform: translateY(0); /* Move para a posição final */
+}
+
+/* Ajustes específicos para iOS */
+@supports (padding-top: env(safe-area-inset-top)) {
+    body {
+        padding-top: env(safe-area-inset-top);
+    }
+
+    header {
+        padding-top: env(safe-area-inset-top);
+    }
+}
+
+/* Media query para dispositivos iOS */
+@media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
+    body {
+        padding-top: 60px; /* Ajuste com base na altura do header */
+    }
 }

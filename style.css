@@ -30,17 +30,21 @@ body {
 }
 
 /* Cabeçalho */
+/* Definir o header como sticky */
 header {
+    position: sticky;
+    top: 0; /* Fixar no topo */
     display: flex;
     justify-content: space-around;
     align-items: center;
     gap: 1rem;
     flex-wrap: wrap;
-    padding: 10px 0;
+    padding: env(safe-area-inset-top, 10px) 0; /* Respeitar a área segura no iOS */
     background-color: var(--white);
     width: 100%;
     z-index: 100;
     background: url(images/1.png);
+    box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2); /* Adiciona sombra para destaque */
 }
 
 .box-img-header {

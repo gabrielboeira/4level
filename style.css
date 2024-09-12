@@ -421,3 +421,9 @@ body {
         padding-top: calc(60px + env(safe-area-inset-top));
     }
 }
+
+.copy {
+    color: white;
+    margin-left: 55px;
+    opacity: 10%;
+}

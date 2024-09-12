@@ -60,6 +60,3 @@ document.addEventListener('DOMContentLoaded', function() {
     const themeIcon = document.getElementById("theme-icon");*/
 
   });
-
-  
-  

@@ -10,26 +10,23 @@
 /* Variáveis */
 :root {
     --black: #000000;
-    --grey: #717171;
+    --orange: #DB4A2B;
     --white1: #F3F3F3;
     --white: #FFFFFF;
     --blue: #89a7b1;
-    --cyan1: #0278EF;
-    --dark1: #1a1a1a;
+    --cyan1: #DB4A2B;
+    --bege: #E4E2DD;
     --dark4: #2c2c2c;
 }
 
 /* Estilos globais */
 html, body {
-    background-color: var(--dark1);
     height: 100%;
     font-family: 'Lato', sans-serif;
-    background-image: url('images/bg1.png');
-    background-attachment: scroll;
-    background-repeat: no-repeat;
+    background: url(images/fundo2.png) no-repeat center;
     background-size: cover;
+    background-attachment: fixed; /* Certifica que a imagem de fundo role junto com a página */
     overflow-x: hidden; /* Para evitar overflow horizontal */
-    position: relative;
     padding-top: 60px; /* Ajuste baseado na altura do header */
 }
 
@@ -41,16 +38,18 @@ header {
     gap: 1rem;
     flex-wrap: wrap;
     padding: 10px 0;
-    background-color: var(--white);
+    background-color: var(--orange);
     width: 100%;
     z-index: 1000;
-    background: url(images/1.png);
     position: fixed; /* Fixa o header no topo */
     top: 0;
+    left: 0;
+    height: 60px; /* Altura fixa do header */
 }
 
+/* Logo */
 .box-img-header {
-    height: 100%;
+    height: 150%;
 }
 
 .img-logo {
@@ -97,7 +96,6 @@ section {
     flex-wrap: wrap;
     align-items: center;
     min-height: 650px;
-    margin-top: 60px; /* Compensação do header */
 }
 
 .first-section > div {
@@ -116,29 +114,22 @@ h1 {
 }
 
 strong {
-    color: var(--cyan1);
+    color: var(--orange);
 }
 
-.first-section p {
+.first-section p, h3 {
     color: var(--white);
 }
 
-h2 {
-    color: var(--cyan1);
-}
-
-.tittle, .title {
-    color: var(--white);
-}
-
-h3 {
-    color: var(--white);
+h2, .tittle, .title {
+    color: var(--bege);
 }
 
 .btn-action {
-    background-color: var(--cyan1);
-    border: 5px solid var(--cyan1);
-    color: var(--white);
+    background-color: var(--bege);
+    border: 5px solid var(--bege);
+    color: var(--orange);
+    font-weight: bold;
     text-decoration: none;
     display: flex;
     justify-content: center;
@@ -150,25 +141,29 @@ h3 {
 }
 
 .btn-action:hover {
-    background-color: var(--cyan1);
-    border: 1px solid var(--cyan1);
+    background-color: var(--orange);
+    border: 1px solid var(--orange);
+    color: var(--bege);
 }
 
 /* Imagens */
 .box-img-main {
-    max-width: 500px;
-    width: 300px;
-    padding: 5rem;
+    max-width: 300px; /* Aumente o tamanho máximo para 800px */
+    width: 100%;
+    padding: 1rem;
 }
 
 .img-profile {
-    width: 100%;
-    max-width: 500px;
+    width: 400px; /* Ajuste a largura para 100% para que a imagem se adapte ao container */
+    height: 100%;
+    max-width: 1000px; /* Aumente o tamanho máximo para 800px */
+    padding-right: 40px;
+    border-radius: 10%;
 }
 
 /* Segunda e quarta seção */
 :is(.second-section, .fourth-section) {
-    background-color: var(--cyan1);
+    background-color: var(--orange);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -192,7 +187,7 @@ h3 {
 }
 
 .second-section ul li:hover {
-    color: var(--cyan1);
+    color: var(--bege);
     transition: 0.4s;
     cursor: pointer;
 }
@@ -259,23 +254,12 @@ footer > div {
     cursor: pointer;
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-    .first-section {
-        flex-direction: column;
-    }
-
-    .img-profile {
-        width: 80%;
-    }
-}
-
 /* Formulário */
 #contact-form {
     max-width: 400px;
     margin: 1px auto;
     padding: 14px;
-    background-color: #0278EF;
+    background-color: var(--cyan1);
     border-radius: 10px;
     box-shadow: 0 0 15px #ffffff42;
 }
@@ -324,86 +308,48 @@ footer > div {
 
 /* Estilos para a mensagem de feedback */
 .form-message {
-    position: fixed; /* Fixa o elemento na tela */
-    bottom: 20px; /* Distância do fundo da tela */
-    right: 20px; /* Distância da borda direita da tela */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
     padding: 15px;
     border-radius: 5px;
     color: #fff;
     font-size: 16px;
     text-align: center;
-    opacity: 0; /* Começa invisível */
-    transition: opacity 0.5s, transform 0.5s; /* Animação suave */
-    transform: translateY(20px); /* Começa um pouco abaixo da posição final */
-    z-index: 1000; /* Certifique-se de que está acima de outros elementos */
+    opacity: 0;
+    transition: opacity 0.5s, transform 0.5s;
+    transform: translateY(20px);
+    z-index: 1000;
 }
 
 .form-message.success {
-    background-color: #0278EF; /* Verde para sucesso */
+    background-color: var(--cyan1);
 }
 
 .form-message.error {
-    background-color: #f44336; /* Vermelho para erro */
+    background-color: #f44336;
 }
 
 .form-message.show {
-    opacity: 1; /* Torna o elemento visível */
-    transform: translateY(0); /* Move para a posição final */
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .first-section {
+        flex-direction: column;
+    }
+
+    .img-profile {
+        width: 70%;
+        margin: 0 auto; /* Adicione essa linha para centralizar a imagem */
+    }
 }
 
 /* Ajustes específicos para iOS */
 @supports (padding-top: env(safe-area-inset-top)) {
     body {
-        padding-top: env(safe-area-inset-top);
-    }
-
-    header {
-        padding-top: env(safe-area-inset-top);
-    }
-}
-
-/* Media query para dispositivos iOS */
-@media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
-    body {
-        padding-top: 60px; /* Ajuste com base na altura do header */
-    }
-}
-
-/* Ajuste geral para garantir que o header não sobreponha */
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow-x: hidden; /* Evitar rolagem horizontal */
-}
-
-/* Cabeçalho */
-header {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-    padding: 10px 0;
-    background-color: var(--white);
-    width: 100%;
-    z-index: 1000;
-    background: url(images/1.png);
-    position: fixed; /* Fixa o header no topo */
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 60px; /* Defina uma altura fixa para o header */
-}
-
-/* Garantindo que o conteúdo não fique abaixo do header */
-body {
-    padding-top: 60px; /* Mesmo valor da altura do header */
-}
-
-/* Ajustes específicos para iOS com safe-area */
-@supports (padding-top: env(safe-area-inset-top)) {
-    body {
         padding-top: calc(60px + env(safe-area-inset-top));
     }
 
@@ -412,14 +358,10 @@ body {
     }
 }
 
-/* Media query para dispositivos iOS com notch (como iPhone X e superiores) */
+/* Media query para dispositivos iOS com notch */
 @media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
     header {
         padding-top: env(safe-area-inset-top);
-    }
-
-    body {
-        padding-top: calc(60px + env(safe-area-inset-top));
     }
 }
 

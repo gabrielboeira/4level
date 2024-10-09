@@ -47,6 +47,12 @@ header {
     height: 60px; /* Altura fixa do header */
 }
 
+h4 {
+    color: var(--cyan1);
+    background: var(--bege);
+    text-align: center;
+
+}
 /* Logo */
 .box-img-header {
     height: 150%;
@@ -109,8 +115,9 @@ section {
 /* Textos e botões */
 h1 {
     font-size: 4rem;
-    color: var(--white);
-    letter-spacing: 4px;
+    color: var(--bege);
+    letter-spacing: 5px;
+    margin-top: -20%;
 }
 
 strong {

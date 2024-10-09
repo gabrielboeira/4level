@@ -4,7 +4,7 @@ emailjs.init("TYYnUMx-zhFbCENlf");
 document.getElementById("contact-form").addEventListener("submit", function(event) {
     event.preventDefault(); // Previne o comportamento padrão do formulário
 
-    emailjs.sendForm("service_02u4nxt", "template_g94d8wh", this)
+    emailjs.sendForm("service_02u4nxt", "template_l51207q", this)
         .then(function(response) {
             showMessage("Mensagem enviada com sucesso!", "success");
             console.log("Success:", response);

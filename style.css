@@ -10,20 +10,19 @@
 /* Variáveis */
 :root {
     --black: #000000;
-    --orange: #DB4A2B;
-    --white1: #F3F3F3;
+    --greenelv:   #59f4b2;
+    --greyelv: #242424;
+    --greyelv-2: #1f1f1f;
+    --orangeelv: #ff914d;
     --white: #FFFFFF;
-    --blue: #89a7b1;
-    --cyan1: #DB4A2B;
-    --bege: #E4E2DD;
-    --dark4: #2c2c2c;
 }
 
 /* Estilos globais */
 html, body {
     height: 100%;
     font-family: 'Lato', sans-serif;
-    background: url(images/fundo2.png) no-repeat center;
+    /* background: url(images/fundo2.png) no-repeat center; */
+    background-color: var(--greyelv-2);
     background-size: cover;
     background-attachment: fixed; /* Certifica que a imagem de fundo role junto com a página */
     overflow-x: hidden; /* Para evitar overflow horizontal */
@@ -38,7 +37,7 @@ header {
     gap: 1rem;
     flex-wrap: wrap;
     padding: 10px 0;
-    background-color: var(--orange);
+    background-color: var(--greyelv);
     width: 100%;
     z-index: 1000;
     position: fixed; /* Fixa o header no topo */
@@ -47,19 +46,17 @@ header {
     height: 60px; /* Altura fixa do header */
 }
 
-h4 {
-    color: var(--cyan1);
-    background: var(--bege);
-    text-align: center;
-
-}
 /* Logo */
 .box-img-header {
     height: 150%;
 }
 
 .img-logo {
-    max-width: 65px;
+    max-width: 70px;
+    padding-bottom: 11px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
     height: 100%;
 }
 
@@ -115,13 +112,13 @@ section {
 /* Textos e botões */
 h1 {
     font-size: 4rem;
-    color: var(--bege);
+    color: var(--white);
     letter-spacing: 5px;
     margin-top: -20%;
 }
 
 strong {
-    color: var(--orange);
+    color: var(--greenelv);
 }
 
 .first-section p, h3 {
@@ -129,13 +126,13 @@ strong {
 }
 
 h2, .tittle, .title {
-    color: var(--bege);
+    color: var(--white);
 }
 
 .btn-action {
-    background-color: var(--bege);
-    border: 5px solid var(--bege);
-    color: var(--orange);
+    background-color: var(--greenelv);
+    border: 5px solid var(--greenelv);
+    color: var(--greyelv);
     font-weight: bold;
     text-decoration: none;
     display: flex;
@@ -148,9 +145,9 @@ h2, .tittle, .title {
 }
 
 .btn-action:hover {
-    background-color: var(--orange);
-    border: 1px solid var(--orange);
-    color: var(--bege);
+    background-color: var(--greyelv );
+    border: 1px solid var(--greyelv );
+    color: var(--greenelv);
 }
 
 /* Imagens */
@@ -170,7 +167,7 @@ h2, .tittle, .title {
 
 /* Segunda e quarta seção */
 :is(.second-section, .fourth-section) {
-    background-color: var(--orange);
+    background-color: var(--greyelv);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -194,7 +191,7 @@ h2, .tittle, .title {
 }
 
 .second-section ul li:hover {
-    color: var(--bege);
+    color: var(--white);
     transition: 0.4s;
     cursor: pointer;
 }
@@ -276,7 +273,7 @@ footer > div {
 }
 
 .popup-content {
-    background-color: #E4E2DD; /* Cor de fundo do pop-up */
+    background-color: var(--greyelv); /* Cor de fundo do pop-up */
     padding: 20px;
     border-radius: 8px;
     text-align: center;
@@ -285,18 +282,19 @@ footer > div {
 }
 
 .popup-content h2 {
-    color: #DB4A2B; /* Título na cor vermelha */
+    color: var(--greenelv); /* Título na cor vermelha */
     margin-bottom: 10px;
 }
 
 .popup-content p {
-    color: #333;
+    color: var(--white);
     margin-bottom: 20px;
 }
 
 .popup-button {
-    background-color: #DB4A2B; /* Botão na cor vermelha */
-    color: white;
+    background-color: var(--greenelv); /* Botão na cor vermelha */
+    color: var(--greyelv);
+    font-weight: bold;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
@@ -305,11 +303,13 @@ footer > div {
 }
 
 .popup-button:hover {
-    background-color: #B43A22; /* Efeito de hover mais escuro */
+    background-color: var(--white); /* Efeito de hover mais escuro */
+    color: var(--greenelv);
 }
 
 a {
-    color: #DB4A2B;
+    color: var(--greenelv);
+    font-weight: bold;
     text-decoration: none;
 }
 
@@ -322,7 +322,7 @@ a:hover {
     max-width: 400px;
     margin: 1px auto;
     padding: 14px;
-    background-color: var(--cyan1);
+    background-color: var(--greenelv);
     border-radius: 10px;
     box-shadow: 0 0 15px #ffffff42;
 }
@@ -337,7 +337,7 @@ a:hover {
     display: block;
     margin-bottom: 10px;
     font-weight: bold;
-    color: #e7e7e7;
+    color: var(--greyelv);
 }
 
 #contact-form input[type="text"], 
@@ -386,11 +386,12 @@ a:hover {
 }
 
 .form-message.success {
-    background-color: var(--cyan1);
+    background-color: var(--greyelv);
+    color: var(--greenelv);
 }
 
 .form-message.error {
-    background-color: #f44336;
+    background-color: var(--greyelv);
 }
 
 .form-message.show {
